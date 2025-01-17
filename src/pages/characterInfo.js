@@ -85,7 +85,7 @@ const CharacterInfo = () => {
                                         }}
                                         style={{
                                             width: "100%",
-                                            maxWidth: "400px",
+                                            maxWidth: "350px",
                                             height: "auto",
                                             borderRadius: "12px",
                                             boxShadow:

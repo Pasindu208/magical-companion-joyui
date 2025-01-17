@@ -7,7 +7,9 @@ import { mainSheetStyles } from "./styles/sheetStyles";
 import Home from "./pages/home";
 import Characters from "./pages/characters";
 import CharacterInfo from "./pages/characterInfo";
-import UnderConstruction from "./components/UnderConstruction";
+import Spells from "./pages/spells";
+import UnderConstruction from "./components/underConstruction.js";
+import NoPage from "./components/noPage.js";
 
 export default function App() {
     return (
@@ -35,7 +37,7 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/characters" element={<Characters />} />
                         <Route path="/characters/:name" element={<CharacterInfo />} />
-                        <Route path="/spells" element={<UnderConstruction />} />
+                        <Route path="/spells" element={<Spells />} />
                         <Route path="/books" element={<UnderConstruction />} />
                         <Route path="/movies" element={<UnderConstruction />} />
                         <Route path="/sorting-hat" element={<UnderConstruction />} />
@@ -44,6 +46,7 @@ export default function App() {
                         <Route path="/houses/:name" element={<UnderConstruction />} />
                         <Route path="/movies/:name" element={<UnderConstruction />} />
                         <Route path="/books/:name" element={<UnderConstruction />} />
+                        <Route path="*" element={<NoPage message="Page Not Found" />} />
                     </Routes>
                 </Sheet>
             </Router>

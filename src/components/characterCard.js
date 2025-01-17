@@ -8,12 +8,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import { useTheme } from "@mui/joy/styles";
 import Link from "@mui/joy/Link";
-import Skeleton from "@mui/joy/Skeleton";
 
-export default function CharacterCard({ name, imageUrl, loading }) {
+export default function CharacterCard({ name, imageUrl }) {
     const theme = useTheme();
-    const placeholderSrc =
-        "https://via.placeholder.com/800x400?text=Loading...";
+    const placeholderSrc = "https://via.placeholder.com/800x400?text=Loading...";
 
     const boxStyles = {
         display: "grid",
@@ -40,50 +38,6 @@ export default function CharacterCard({ name, imageUrl, loading }) {
         boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
         backgroundColor: "background.surface",
     };
-
-    if (loading) {
-        return (
-            <Box component="ul" sx={boxStyles}>
-                <Card
-                    sx={{
-                        ...cardBaseStyles,
-                        animation: "pulse 1.5s ease-in-out infinite",
-                        "@keyframes pulse": {
-                            "0%": { opacity: 1 },
-                            "50%": { opacity: 0.7 },
-                            "100%": { opacity: 1 },
-                        },
-                    }}>
-                    <CardCover>
-                        <Skeleton
-                            variant="rectangular"
-                            width="100%"
-                            height="280px"
-                            animation="wave"
-                        />
-                    </CardCover>
-                    <CardContent
-                        sx={{
-                            position: "absolute",
-                            bottom: 0,
-                            width: "100%",
-                            padding: "16px",
-                            backgroundColor: "background.surface",
-                        }}>
-                        <Skeleton
-                            variant="text"
-                            width="80%"
-                            animation="wave"
-                            sx={{
-                                fontSize: "var(--joy-fontSize-lg)",
-                                borderRadius: "8px",
-                            }}
-                        />
-                    </CardContent>
-                </Card>
-            </Box>
-        );
-    }
 
     return (
         <Box component="ul" sx={boxStyles}>

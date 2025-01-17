@@ -38,7 +38,7 @@ const Characters = () => {
                     paddingTop: "120px",
                 }}>
                 {loading
-                    ? Array.from(new Array(8)).map((_, index) => (
+                    ? Array.from(new Array(15)).map((_, index) => (
                           <Card key={`skeleton-${index}`} loading={true} />
                       ))
                     : characters.map((character) => (
