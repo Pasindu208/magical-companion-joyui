@@ -4,12 +4,13 @@ import Card from "@mui/joy/Card";
 import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
+import { Skeleton } from "@mui/joy";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import { useTheme } from "@mui/joy/styles";
 import Link from "@mui/joy/Link";
 
-export default function CharacterCard({ name, imageUrl }) {
+export default function CharacterCard({ name, imageUrl, loading }) {
     const theme = useTheme();
     const placeholderSrc = "https://via.placeholder.com/800x400?text=Loading...";
 
@@ -39,6 +40,36 @@ export default function CharacterCard({ name, imageUrl }) {
         backgroundColor: "background.surface",
     };
 
+    const renderLoader = () => (
+        <Skeleton 
+            variant="rectangular" 
+            width="100%" 
+            height="100%" 
+            animation="pulse"
+        />
+    );
+
+    if (loading) {
+        return (
+            <Box component="ul" sx={boxStyles}>
+                <Card size="sm" sx={cardBaseStyles}>
+                    <CardCover>
+                        {renderLoader()}
+                    </CardCover>
+                    <CardContent
+                        sx={{
+                            position: "absolute",
+                            bottom: 0,
+                            width: "100%",
+                            padding: "16px",
+                        }}>
+                        <Skeleton variant="text" width="80%" sx={{ mx: "auto" }} />
+                    </CardContent>
+                </Card>
+            </Box>
+        );
+    }
+
     return (
         <Box component="ul" sx={boxStyles}>
             <Card
@@ -53,6 +84,7 @@ export default function CharacterCard({ name, imageUrl }) {
                         boxShadow: "rgba(0, 0, 0, 0.2) 0px 8px 24px",
                     },
                 }}>
+                
                 <CardCover
                     sx={{
                         position: "absolute",
@@ -77,6 +109,8 @@ export default function CharacterCard({ name, imageUrl }) {
                             src={imageUrl}
                             placeholderSrc={placeholderSrc}
                             effect="opacity"
+                            beforeLoad={() => renderLoader()}
+                            placeholder={renderLoader()}
                             alt={name}
                             onError={(e) => {
                                 e.target.src =

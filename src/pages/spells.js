@@ -29,24 +29,18 @@ const Spells = () => {
           display: 'grid',
           gridTemplateColumns: {
             xs: '1fr',
-            sm: 'repeat(auto-fill, minmax(240px, 1fr))',
+            sm: 'repeat(auto-fit, minmax(250px, 1fr))',
           },
-          gap: 2,
-          p: { xs: 2, sm: 3, md: 4 },
+          gap: 3,
+          p: 3,
           mx: 'auto',
           maxWidth: '1800px',
-          width: 'auto',
-          boxSizing: 'border-box',
-          listStyle: 'none',
-          mt: '100px',
-          '& > li': {
-            height: '100%',
-            display: 'flex'
-          }
+          width: '100%',
+          listStyle: 'none'
         }}
       >
         {spells.map((spell) => (
-          <li key={spell.id}>
+          <li key={spell.id} style={{ display: 'flex', justifyContent: 'center' }}>
             <SpellCard
               name={spell.name}
               description={spell.description}
