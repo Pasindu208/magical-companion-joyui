@@ -59,7 +59,7 @@ const Characters = () => {
             <div style={{ paddingTop: "120px" }}>
                 <Autocomplete
                     freeSolo
-                    autoSelect
+                    // autoSelect
                     autoHighlight
                     placeholder="Search characters..."
                     startDecorator={<SearchIcon />}
