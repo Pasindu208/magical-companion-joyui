@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../components/navbar'
 import axios from 'axios'
-import { Box } from '@mui/joy'
+import { Box, Input } from '@mui/joy'
 import SpellCard from '../components/spellCard'
 
 const Spells = () => {
   const [spells, setSpells] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchSpells = async () => {
@@ -23,6 +24,17 @@ const Spells = () => {
   return (
     <div>
       <Navbar />
+      <div style={{ paddingTop: "120px", display: "flex", justifyContent: "center" }}>
+        <Input
+          placeholder="Search spells..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          sx={{
+            width: "80%",
+            maxWidth: 400,
+          }}
+        />
+      </div>
       <Box
         component="ul"
         sx={{
@@ -39,13 +51,17 @@ const Spells = () => {
           listStyle: 'none'
         }}
       >
-        {spells.map((spell) => (
-          <li key={spell.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <SpellCard
-              name={spell.name}
-              description={spell.description}
-            />
-          </li>
+        {spells
+          .filter((spell) => 
+            spell.name.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((spell) => (
+            <li key={spell.id} style={{ display: 'flex', justifyContent: 'center' }}>
+              <SpellCard
+                name={spell.name}
+                description={spell.description}
+              />
+            </li>
         ))}
       </Box>
     </div>
