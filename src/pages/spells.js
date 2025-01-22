@@ -30,8 +30,7 @@ const Spells = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           sx={{
-            width: "80%",
-            maxWidth: 400,
+            width: { xs: '80%', sm: '400px' },
           }}
         />
       </div>
@@ -48,7 +47,9 @@ const Spells = () => {
           mx: 'auto',
           maxWidth: '1800px',
           width: '100%',
-          listStyle: 'none'
+          listStyle: 'none',
+          boxSizing: 'border-box',
+          overflowX: 'hidden'
         }}
       >
         {spells

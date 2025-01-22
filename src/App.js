@@ -8,6 +8,8 @@ import Home from "./pages/home";
 import Characters from "./pages/characters";
 import CharacterInfo from "./pages/characterInfo";
 import Spells from "./pages/spells";
+import Books from "./pages/books";
+import BookInfo from "./pages/bookInfo.js";
 import UnderConstruction from "./components/underConstruction.js";
 import NoPage from "./components/noPage.js";
 
@@ -38,14 +40,14 @@ export default function App() {
                         <Route path="/characters" element={<Characters />} />
                         <Route path="/characters/:name" element={<CharacterInfo />} />
                         <Route path="/spells" element={<Spells />} />
-                        <Route path="/books" element={<UnderConstruction />} />
+                        <Route path="/books" element={<Books />} />
                         <Route path="/movies" element={<UnderConstruction />} />
                         <Route path="/sorting-hat" element={<UnderConstruction />} />
                         <Route path="/chat" element={<UnderConstruction />} />
                         <Route path="/houses" element={<UnderConstruction />} />
                         <Route path="/houses/:name" element={<UnderConstruction />} />
                         <Route path="/movies/:name" element={<UnderConstruction />} />
-                        <Route path="/books/:name" element={<UnderConstruction />} />
+                        <Route path="/books/:serial" element={<BookInfo />} />
                         <Route path="*" element={<NoPage message="Page Not Found" />} />
                     </Routes>
                 </Sheet>
