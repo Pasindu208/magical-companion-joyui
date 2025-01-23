@@ -88,11 +88,17 @@ const Home = () => {
                         // color: "rgba(255, 255, 255, 0.9)",
                         justifyContent: "center",
                         textAlign: "center",
-                        fontWeight: "bold",
+                        // fontWeight: "bold",
                     }}>
-                    Your ultimate tool for managing and organizing all your
-                    magical adventures. Keep track of your spells, inventory,
-                    and companions all in one place.
+                    {/* Welcome to Magical Companion! 🪄✨*/} Step into a magical 
+                    realm where the wonders of Harry Potter come to life.
+                    Explore detailed information about your favorite characters
+                    🧙‍♂️, iconic spells ✨, legendary books 📚, and unforgettable
+                    movies 🎥. Dive into the rich history of Hogwarts and
+                    uncover the secrets of the four houses 🦁🐍🦅🦡. Whether
+                    you're a curious Muggle or a seasoned witch or wizard,
+                    there's something enchanting here for everyone. So grab your
+                    wand and let the adventure begin! ⚡🏰
                 </Typography>
                 <Grid
                     container
@@ -117,13 +123,14 @@ const Home = () => {
                                     textDecoration: "none",
                                     "&:hover": {
                                         boxShadow: "lg",
-                                        transform: "translateY(-8px) scale(1.02)",
+                                        transform:
+                                            "translateY(-8px) scale(1.02)",
                                         backgroundColor: "background.level2",
                                         textDecoration: "none",
-                                        '& img': {
+                                        "& img": {
                                             filter: "drop-shadow(0 0 30px rgba(255, 255, 255, 0.8))",
                                             transform: "scale(1.1)",
-                                        }
+                                        },
                                     },
                                 }}>
                                 <CardContent>
@@ -143,7 +150,8 @@ const Home = () => {
                                                 height: "100px",
                                                 objectFit: "contain",
                                                 filter: "drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))",
-                                                transition: "all 0.3s ease-in-out",
+                                                transition:
+                                                    "all 0.3s ease-in-out",
                                             }}
                                         />
                                         <Typography
