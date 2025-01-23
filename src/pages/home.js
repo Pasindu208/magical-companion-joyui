@@ -31,14 +31,14 @@ const cardList = [
         path: "/movies",
     },
     {
-        title: "Chat",
-        img: hp,
-        path: "/chat",
-    },
-    {
         title: "Houses",
         img: house,
         path: "/houses",
+    },
+    {
+        title: "Chat",
+        img: hp,
+        path: "/chat",
     },
     {
         title: "Sorting Hat",
@@ -92,7 +92,7 @@ const Home = () => {
                     }}>
                     {/* Welcome to Magical Companion! 🪄✨*/} Step into a magical 
                     realm where the wonders of Harry Potter come to life.
-                    Explore detailed information about your favorite characters
+                    Explore detailed information about your favourite characters
                     🧙‍♂️, iconic spells ✨, legendary books 📚, and unforgettable
                     movies 🎥. Dive into the rich history of Hogwarts and
                     uncover the secrets of the four houses 🦁🐍🦅🦡. Whether
@@ -102,6 +102,7 @@ const Home = () => {
                 </Typography>
                 <Grid
                     container
+                    justifyContent={{ xs: "center" }}
                     spacing={3}
                     pb={4}
                     columns={{
