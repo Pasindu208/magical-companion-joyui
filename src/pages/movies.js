@@ -70,7 +70,6 @@ const Movies = () => {
                               variant="outlined"
                               sx={{ width: 250, p: 0 }}>
                               {" "}
-                              // Added p: 0
                               <Skeleton variant="rectangular" height={300} />
                               <Skeleton
                                   variant="text"
