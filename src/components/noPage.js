@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
@@ -21,14 +21,6 @@ const shakeAnimation = {
 };
 
 const NoPage = () => {
-    useEffect(() => {
-        // Check if vibration API is supported
-        if ('vibrate' in navigator) {
-            // Vibrate in a pattern that matches the shake animation (500ms total)
-            navigator.vibrate([50, 50, 50, 50, 50, 50, 50, 50, 50, 50]);
-        }
-    }, []);
-
     return (
         <div
             style={{
