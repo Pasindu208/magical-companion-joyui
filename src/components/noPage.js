@@ -5,7 +5,7 @@ import Typography from "@mui/joy/Typography";
 import Navbar from "./navbar";
 
 const floatingAnimation = {
-    '@keyframes floating': {
+    '@keyframes float': {
         '0%': { transform: 'translateY(0px)' },
         '50%': { transform: 'translateY(-20px)' },
         '100%': { transform: 'translateY(0px)' }
@@ -37,10 +37,25 @@ const NoPage = () => {
                 fontSize="3rem" 
                 marginBottom="3rem"
                 sx={{
-                    animation: 'floating 3s ease-in-out infinite',
-                    ...floatingAnimation
+                    display: 'flex',
+                    gap: '0.5rem',
+                    justifyContent: 'center',
+                    ...floatingAnimation,
                 }}>
-                404
+                <span style={{
+                    display: 'inline-block',
+                    animation: 'float 3s ease-in-out infinite',
+                }}>4</span>
+                <span style={{
+                    display: 'inline-block',
+                    animation: 'float 3s ease-in-out infinite',
+                    animationDelay: '0.2s',
+                }}>0</span>
+                <span style={{
+                    display: 'inline-block',
+                    animation: 'float 3s ease-in-out infinite',
+                    animationDelay: '0.4s',
+                }}>4</span>
             </Typography>
             <Typography 
                 level="h2" 
